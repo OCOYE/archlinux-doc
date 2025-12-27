@@ -74,6 +74,7 @@ Iremos utilizar a ferramenta `cfdisk`
 3. Swap: Memória "RAM" de reserva, caso a sua memória RAM esteja 100% ocupada irá utilizar a swap para carregar os outros programas que não cabe na RAM, mas é extremamente lenta, porque depende do seu armazenamento.
 
 No terminal digite `cfdisk`
+
 **Obs:** Para especificar o disco, digite `cfdisk /dev/sdX`
 
 Agora, crie as partições.
