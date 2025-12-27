@@ -1,6 +1,8 @@
 # Archlinux Doc!
 Minha documentação para o Archlinux, baseando-se em fontes como a wiki do [Arch](https://wiki.archlinux.org/title/Main_page).
 
+***Atenção: Documento exclusivo para dispositivos EFI***
+
 ## Divisão das etapas
 1. Pré-Instalação
 2. Instalação
@@ -33,7 +35,7 @@ Neste exemplo, irei utilizar um site.
 
 Será preciso utilizar o iwctl que já vem por padrão com o Arch.
 
-`iwctl` O seu terminal mudará para o iwctl que serve para digitar os comandos exclusivos do iwctl.
+`iwctl` o seu terminal mudará para o iwctl que serve para digitar os comandos exclusivos do iwctl.
 
 `device list` mostrará todos os dispositivos que serve para se conectar a internet, geralmente o nome será **wlan0**
 
@@ -51,5 +53,30 @@ Após isso, verifique com o comando `ping` para verificar se está tudo funciona
 Caso queira deixar o modelo do teclado `br-abnt2`, digite o seguinte comando:
 
 `loadkeys [modelo do teclado]`
+
+# Particionamento de Disco
+
+Essa etapa servirá para definir quanto de swap, armazenamento e bootloader queremos.
+
+# Particionando
+Iremos utilizar a ferramenta `cfdisk`
+
+## Partições necessárias
+1. Root 
+2. Boot (EFI, tamanho recomendável: 512Mb)
+3. Swap (opcional, mas recomendável, tamanho recomendável: 4Gb)
+
+**Função de cada**
+1. Root: Onde todos os arquivos irão estar, incluindo o seus aplicativos e sistema operacional
+
+2. Boot: Pequena partição que servirá para inicializar o sistema
+
+3. Swap: Memória "RAM" de reserva, caso a sua memória RAM esteja 100% ocupada irá utilizar a swap para carregar os outros programas que não cabe na RAM, mas é extremamente lenta, porque depende do seu armazenamento.
+
+No terminal digite `cfdisk`
+**Obs:** Para especificar o disco, digite `cfdisk /dev/sdX`
+
+Agora, crie as partições.
+Após a criação das partições, especifique cada uma com o `[Type]`, e depois de especificar, escreva todas com o `[Write]`, e logo após, selecione `[Quit]`
 
 
