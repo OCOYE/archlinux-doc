@@ -1,5 +1,5 @@
 # Archlinux Doc!
-Minha documentação para o Archlinux, baseando-se em fontes como a wiki do [Arch](https://wiki.archlinux.org/title/Main_page).
+Minha documentação para o Archlinux, baseando-se em fontes como o guia de instalação da wiki do [Arch Linux](https://wiki.archlinux.org/title/Installation_guide).
 
 ***Atenção: Documento exclusivo para dispositivos EFI***
 
