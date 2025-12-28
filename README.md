@@ -29,7 +29,7 @@ será preciso verificar a conexão com a internet.
 **Obs:** Caso esteja em máquina virtual ou utilize cabo de ethernet, pode pular este procedimento, porque o archlinux irá detectar automaticamente.
 
 Um dos comandos mais rápidos e eficazes de verificar a conexão com a internet é verificar se o seu computador testa a conectividade com algum destinatário (site, servidor ou outro pc).
-Neste exemplo, irei utilizar um site.
+Neste exemplo, irei utilizar o site da Google.
 
 `ping google.com`
 
