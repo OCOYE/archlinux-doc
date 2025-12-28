@@ -164,6 +164,7 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 
 # Bootloader
 `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch` irá criar um arquivo que permitirá o grub
+
 **Obs:** O `Arch` é apenas um nome, você pode colocar outro nome como por exemplo `GRUB`
 
 `grub-mkconfig -o /boot/grub/grub.cfg` configurará o grub para dizer como o sistema deve iniciar
