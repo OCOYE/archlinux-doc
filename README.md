@@ -170,7 +170,7 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 # Pós-configurações
 Após finalizar tudo, prossiga com os seguintes passos
 
-`exit` para sair o sistema montado
+`exit` para sair do chroot
 
 `umount -R /mnt` desmontará todas as pastas da forma correta
 
