@@ -104,9 +104,9 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 ## Sistema
 `pacstrap -K /mnt [pacotes aqui]` aqui abaixo mostrará os pacotes que você deve colocar ou pacotes opcionais
 
-1. `base` (essencial)
-2. `linux` (essencial)
-3. `linux-firmware` (essencial)
+1. `base` (essencial, é um metapacote)
+2. `linux` (essencial, instala o kernel linux)
+3. `linux-firmware` (essencial, instala os firmwares)
 4. `intel-ucode` (altamente recomendável, utilize se tiver processador da Intel)
 5. `amd-ucode` (altamente recomendável, utilize se tiver processador da AMD)
 6. `networkmanager` (altamente recomendável, serve para se conectar a internet e entre outros afins)
