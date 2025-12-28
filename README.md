@@ -7,8 +7,8 @@ Minha documentação para o Archlinux, baseando-se em fontes como a wiki do [Arc
 1. Pré-Instalação
 2. Instalação
 3. Particionamento do disco
-4. Sistema e Pacotes
-5. Usuário
+4. Mirror e Sistema
+5. Configuração e Usuário
 6. Bootloader
 7. Pós-configurações
 
@@ -80,4 +80,98 @@ No terminal digite `cfdisk`
 Agora, crie as partições.
 Após a criação das partições, especifique cada uma com o `[Type]`, e depois de especificar, escreva todas com o `[Write]`, e logo após, selecione `[Quit]`
 
+## Formatando partições
+**Dica:** Utilize o `fdisk -l` para listar todas as partições.
 
+`mkfs.ext4 /dev/partição_root` transformar a partição root no formato ext4
+
+`mkswap /dev/partição_swap` transforma a partição em swap
+
+`mkfs.fat -F 32 /dev/partição_efi` transforma em partição efi
+
+# Montando as partições
+
+`mount --mkdir /dev/partição_efi /mnt/boot` monta a partição efi para que seja possível o boot
+
+`swapon /dev/partição_swap` faz com que seja possível a partição swap funcionar
+
+# Mirror e Sistema
+## Mirror
+Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é bastante utilizado para aumentar a velocidade de download dos pacotes.
+
+`nano /etc/pacman.d/mirrorlist` vá até o seu país e retire todas as #
+
+## Sistema
+`pacstrap -K /mnt [pacotes aqui]` aqui abaixo mostrará os pacotes que você deve colocar ou pacotes opcionais
+
+1. `base` (essencial)
+2. `linux` (essencial)
+3. `linux-firmware` (essencial)
+4. `intel-ucode` (altamente recomendável, utilize se tiver processador da Intel)
+5. `amd-ucode` (altamente recomendável, utilize se tiver processador da AMD)
+6. `networkmanager` (altamente recomendável, serve para se conectar a internet e entre outros afins)
+7. `nano` (recomendável, serve para editar textos)
+8. `base-devel` (essencial, conjunto de ferramentas de compilação)
+9. `linux-headers` (essencial, fornece os arquivos de interface)
+10. `vim` (recomendável, editor de texto avançado)
+11. `sudo` (altamente recomendável, gerenciará as permissões)
+12. grub (altamente recomendável, é o bootloader)
+13. efibootmgr (altamente recomendável, ferramente para que o grub consiga conversar com a placa mãe e criar a entrada de inicialização)
+
+# Configuração
+
+`genfstab -U /mnt >> /mnt/etc/fstab` irá dizer como as partições vão ser montadas automaticamente toda vez que o sistema iniciar
+
+`arch-chroot /mnt` acessa o sistema montado
+
+**Definindo o tempo**
+`ln -sf /usr/share/zoneinfo/*Area*/*Local* /etc/localtime`
+
+**Exemplo**
+`ln -sf /usr/share/zoneinfo/America/Recife /etc/localtime`
+
+`hwclock --systohc` vai assumir que o hardware do relógio está setado em UTC
+
+## Localização
+`/etc/locale.gen` utilize o editor de texto na qual você instalou (como o nano ou o vim) e retire a # na qual pertence ao local
+
+`locale-gen` vai gerar as configurações
+
+`/etc/locale.conf` aqui você definará a variável da linguagem
+
+**Exemplo**
+`LANG=en_US.UTF-8`
+
+`/etc/vconsole.conf` vai setar o layout do teclado
+
+**Exemplo**
+`KEYMAP=de-latin1`
+
+## Configuração da Rede
+`/etc/hostname` aqui você irá definir o nome do seu hostname
+
+## Initramfs
+`mkinitcpio -P` reconstrói os arquivos essenciais para que seja possível com quue o sistema consiga montar a partição raiz e inicializar o kernel durante o boot
+
+# Usuário
+
+## Senha Root
+`passwd` digite este comando e coloque a senha para o root
+
+`useradd  -m -G wheel,audio,video -s /bin/bash [nome do seu usuário]` criará um usuário com todas as permissões
+
+`EDITOR=nano visudo` acesse e procure por `%wheel ALL=(ALL:ALL) ALL` e delete a #, faz com que você tenha todas as permissões
+
+# Bootloader
+`grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch` irá criar um arquivo que permitirá o grub
+
+`grub-mkconfig -o /boot/grub/grub.cfg` configurará o grub para dizer como o sistema deve iniciar
+
+# Pós-configurações
+Após finalizar tudo, prossiga com os seguintes passos
+
+`exit` para sair o sistema montado
+
+`umount -R /mnt` desmontará todas as pastas da forma correta
+
+`reboot` reiniciará o sistema
