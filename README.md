@@ -115,8 +115,8 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 9. `linux-headers` (essencial, fornece os arquivos de interface)
 10. `vim` (recomendável, editor de texto avançado)
 11. `sudo` (altamente recomendável, gerenciará as permissões)
-12. grub (altamente recomendável, é o bootloader)
-13. efibootmgr (altamente recomendável, ferramente para que o grub consiga conversar com a placa mãe e criar a entrada de inicialização)
+12. `grub` (altamente recomendável, é o bootloader)
+13. `efibootmgr` (altamente recomendável, ferramente para que o grub consiga conversar com a placa mãe e criar a entrada de inicialização)
 
 # Configuração
 
