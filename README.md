@@ -89,6 +89,8 @@ Após a criação das partições, especifique cada uma com o `[Type]`, e depois
 
 `mkfs.fat -F 32 /dev/partição_efi` transforma em partição efi
 
+`mount /dev/root_partition /mnt` monta o root para o volume /mnt
+
 # Montando as partições
 
 `mount --mkdir /dev/partição_efi /mnt/boot` monta a partição efi para que seja possível o boot
@@ -107,16 +109,17 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 1. `base` (essencial, é um metapacote)
 2. `linux` (essencial, instala o kernel linux)
 3. `linux-firmware` (essencial, instala os firmwares)
-4. `intel-ucode` (altamente recomendável, utilize se tiver processador da Intel)
-5. `amd-ucode` (altamente recomendável, utilize se tiver processador da AMD)
-6. `networkmanager` (altamente recomendável, serve para se conectar a internet e entre outros afins)
-7. `nano` (recomendável, serve para editar textos)
-8. `base-devel` (essencial, conjunto de ferramentas de compilação)
-9. `linux-headers` (essencial, fornece os arquivos de interface)
-10. `vim` (recomendável, editor de texto avançado)
-11. `sudo` (altamente recomendável, gerenciará as permissões)
-12. `grub` (altamente recomendável, é o bootloader)
-13. `efibootmgr` (altamente recomendável, ferramente para que o grub consiga conversar com a placa mãe e criar a entrada de inicialização)
+4. `base-devel` (essencial, conjunto de ferramentas de compilação)
+5. `linux-headers` (essencial, fornece os arquivos de interface)
+6. `grub` (altamente recomendável, é o bootloader)
+7. `efibootmgr` (altamente recomendável, ferramenta para que o grub consiga conversar com a placa mãe e criar a entrada de inicialização)
+8. `sudo` (altamente recomendável, gerenciará as permissões)
+9. `networkmanager` (altamente recomendável, serve para se conectar à internet e entre outros afins)
+10. `intel-ucode` (altamente recomendável, utilize se tiver processador da Intel)
+11. `amd-ucode` (altamente recomendável, utilize se tiver processador da AMD)
+12. `nano` (recomendável, serve para editar textos)
+13. `vim` (recomendável, editor de texto avançado)
+
 
 # Configuração
 
