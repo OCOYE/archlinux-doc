@@ -10,7 +10,7 @@ Minha documentação para o Archlinux, baseando-se em fontes como o guia de inst
 4. Mirror e Sistema
 5. Configuração e Usuário
 6. Bootloader
-7. Pós-configurações
+7. Pós-configuração
 
 # Pré-Instalação
 Para instalar o sistema operacional Arch em alguma máquina será preciso dos seguintes recursos:
@@ -58,7 +58,7 @@ Caso queira deixar o modelo do teclado `br-abnt2`, digite o seguinte comando:
 
 Essa etapa servirá para definir quanto de swap, armazenamento e bootloader queremos.
 
-# Particionando
+## Particionando
 Iremos utilizar a ferramenta `cfdisk`
 
 ## Partições necessárias
@@ -124,7 +124,7 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 
 `arch-chroot /mnt` acessa o sistema montado
 
-**Definindo o tempo**
+## Definindo o tempo
 `ln -sf /usr/share/zoneinfo/*Area*/*Local* /etc/localtime`
 
 **Exemplo**
@@ -167,7 +167,7 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 
 `grub-mkconfig -o /boot/grub/grub.cfg` configurará o grub para dizer como o sistema deve iniciar
 
-# Pós-configurações
+# Pós-configuração
 Após finalizar tudo, prossiga com os seguintes passos
 
 `exit` para sair do chroot
