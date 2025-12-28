@@ -90,9 +90,8 @@ Após a criação das partições, especifique cada uma com o `[Type]`, e depois
 
 `mkfs.fat -F 32 /dev/partição_efi` transforma em partição efi
 
-`mount /dev/partição_root /mnt` monta o root para o volume /mnt
-
 # Montando as partições
+`mount /dev/partição_root /mnt` monta o root para o volume /mnt
 
 `mount --mkdir /dev/partição_efi /mnt/boot` monta a partição efi para que seja possível o boot
 
