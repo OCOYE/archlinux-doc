@@ -11,6 +11,7 @@ Minha documentação para o Archlinux, baseando-se em fontes como o guia de inst
 5. Configuração e Usuário
 6. Bootloader
 7. Pós-configuração
+8. Outros
 
 # Pré-Instalação
 Para instalar o sistema operacional Arch em alguma máquina será preciso dos seguintes recursos:
@@ -89,7 +90,7 @@ Após a criação das partições, especifique cada uma com o `[Type]`, e depois
 
 `mkfs.fat -F 32 /dev/partição_efi` transforma em partição efi
 
-`mount /dev/partição_root /mnt` monta o root para o volume /mnt
+`mount /dev/partição_root-+ /mnt` monta o root para o volume /mnt
 
 # Montando as partições
 
@@ -180,3 +181,7 @@ Após finalizar tudo, prossiga com os seguintes passos
 `umount -R /mnt` desmontará todas as pastas da forma correta
 
 `reboot` reiniciará o sistema
+
+# Outros
+
+`wipefs -a /dev/sdX` serve para remover as assinaturas do disco todo, ideal se o disco tem outra distro linux
