@@ -12,7 +12,7 @@ Minha documentação para o Archlinux, baseando-se em fontes como o guia de inst
 6. Bootloader
 7. Pós-configurações
 
-## Pré-Instalação
+# Pré-Instalação
 Para instalar o sistema operacional Arch em alguma máquina será preciso dos seguintes recursos:
 
 1. Um computador com acesso à internet
