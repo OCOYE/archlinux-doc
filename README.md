@@ -184,5 +184,3 @@ Após finalizar tudo, prossiga com os seguintes passos
 # Outros
 
 `wipefs -a /dev/sdX` serve para remover as assinaturas do disco todo, ideal se o disco tem outra distro linux
-
-test
