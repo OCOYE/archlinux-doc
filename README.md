@@ -10,8 +10,9 @@ Minha documentação para o Archlinux, baseando-se em fontes como o guia de inst
 4. Mirror e Sistema
 5. Configuração e Usuário
 6. Bootloader
-7. Pós-configuração
+7. Configurações finais
 8. Outros
+9. Pós-Configurações
 
 # Pré-Instalação
 Para instalar o sistema operacional Arch em alguma máquina será preciso dos seguintes recursos:
@@ -80,6 +81,8 @@ No terminal digite `cfdisk`
 
 Agora, crie as partições.
 Após a criação das partições, especifique cada uma com o `[Type]`, e depois de especificar, escreva todas com o `[Write]`, e logo após, selecione `[Quit]`
+
+**Obs:** Utilize o `wipefs -a /dev/sdX` caso tenha uma distro linux no disco, serve para remover todas as assinaturas
 
 ## Formatando partições
 **Dica:** Utilize o `fdisk -l` para listar todas as partições.
@@ -165,14 +168,17 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 
 `EDITOR=nano visudo` acesse e procure por `%wheel ALL=(ALL:ALL) ALL` e delete a #, faz com que você tenha todas as permissões
 
+`passwd [nome do usuário na qual você colocou]` irá definir uma senha para o usuário
+
 # Bootloader
 `grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch` irá criar um arquivo que permitirá o grub
 
 **Obs:** O `Arch` é apenas um nome, você pode colocar outro nome como por exemplo `GRUB`
+**Obs2:** Coloque a flag `--removable` caso a placa-mãe não esteja reconhecendo o disco
 
 `grub-mkconfig -o /boot/grub/grub.cfg` configurará o grub para dizer como o sistema deve iniciar
 
-# Pós-configuração
+# Configurações finais
 Após finalizar tudo, prossiga com os seguintes passos
 
 `exit` para sair do chroot
@@ -180,7 +186,3 @@ Após finalizar tudo, prossiga com os seguintes passos
 `umount -R /mnt` desmontará todas as pastas da forma correta
 
 `reboot` reiniciará o sistema
-
-# Outros
-
-`wipefs -a /dev/sdX` serve para remover as assinaturas do disco todo, ideal se o disco tem outra distro linux
