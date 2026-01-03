@@ -149,7 +149,7 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 `/etc/vconsole.conf` vai setar o layout do teclado
 
 **Exemplo**
-`KEYMAP=de-latin1`
+`KEYMAP=br-abnt2`
 
 ## Configuração da Rede
 `/etc/hostname` aqui você irá definir o nome do seu hostname
