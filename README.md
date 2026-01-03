@@ -4,15 +4,13 @@ Minha documentação para o Archlinux, baseando-se em fontes como o guia de inst
 ***Atenção: Documento exclusivo para dispositivos EFI***
 
 ## Divisão das etapas
-1. Pré-Instalação
-2. Instalação
-3. Particionamento do disco
-4. Mirror e Sistema
-5. Configuração e Usuário
-6. Bootloader
-7. Configurações finais
-8. Outros
-9. Pós-Configurações
+1. [Pré-Instalação](#pré-instalação)
+2. [Instalação](#instalação)
+3. [Particionamento do disco](#particionamento-de-disco)
+4. [Mirror e Sistema](#mirror-e-sistema)
+5. [Configuração e Usuário](#configuração)
+6. [Bootloader](#bootloader)
+7. [Configurações finais](#configurações-finais)
 
 # Pré-Instalação
 Para instalar o sistema operacional Arch em alguma máquina será preciso dos seguintes recursos:
@@ -56,7 +54,7 @@ Caso queira deixar o modelo do teclado `br-abnt2`, digite o seguinte comando:
 
 `loadkeys [modelo do teclado]`
 
-# Particionamento de Disco
+# Particionamento do Disco
 
 Essa etapa servirá para definir quanto de swap, armazenamento e bootloader queremos.
 
