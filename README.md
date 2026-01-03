@@ -1,8 +1,7 @@
 # Archlinux Doc!
 Minha documentação para o Archlinux, baseando-se em fontes como o guia de instalação da wiki do [Arch Linux](https://wiki.archlinux.org/title/Installation_guide).
 
-[!IMPORTANT]
-***Atenção: Documento exclusivo para dispositivos EFI***
+***⚠️ Atenção: Documento exclusivo para dispositivos EFI***
 
 ## Divisão das etapas
 1. [Pré-Instalação](#pré-instalação)
