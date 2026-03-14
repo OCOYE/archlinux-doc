@@ -162,7 +162,9 @@ Um mirror é onde, primeiro, o gerenciador de pacotes deve pegar os pacotes é b
 ## Senha Root
 `passwd` digite este comando e coloque a senha para o root
 
-`useradd  -m -G wheel,audio,video -s /bin/bash [nome do seu usuário]` criará um usuário com todas as permissões
+`useradd  -m -G wheel -s /bin/bash [nome do seu usuário]` criará um usuário com todas as permissões
+
+**Obs:** Se encontrar problemas com permissão mesmo utilizando o sudo, verifique o que o aplicativo precisa para funcionar corretamente (se precisa do input, se precisa do audio e etc...)
 
 `EDITOR=nano visudo` acesse e procure por `%wheel ALL=(ALL:ALL) ALL` e delete a #, faz com que você tenha todas as permissões
 
